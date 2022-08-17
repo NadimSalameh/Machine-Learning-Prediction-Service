@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<h1 style="text-align: center;"> Prediction History</h1>
+<style>
+  table, th, td {
+    border:1px solid rgb(14, 14, 14);
+  }
+  </style>
+<form  method="GET",action ="/history", style="text-align: center;"></form>
+    <table style="width:100%"">
+
+        <tr>
+    <th>timestamp</th>
+          <th>ra</th>
+          <th>dec</th>
+          <th>u</th>
+          <th>g</th>
+          <th>r</th>
+          <th>i</th>
+          <th>z</th>
+          <th>redshift</th>
+          <th>plate</th>
+          <th>mjd</th>
+          <th>prediction</td>
+        </tr>
+        <br>
+         
+            {% for item in items %}
+           <tr> 
+            <td>{{item.timestamp}}</td>
+            <td>{{item.ra}}</td>
+            <td>d{{item.dec}}</td>
+            <td>d{{item.u}}</td>
+            <td>d{{item.g}}</td>
+            <td>d{{item.r}}</td>
+            <td>d{{item.i}}</td>
+            <td>d{{item.z}}</td>
+            <td>{{item.redshift}}</td>
+            <td>{{item.plate}}</td>
+            <td>{{item.mjd}}</td>
+            <td>{{item.prediction}}</td>
+            </tr>
+         {% endfor %}
+    
+        
+        
+        </table>
+    
+   
+
+
+
+    

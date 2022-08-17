@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Machine Learning application</title>
+        
+        <h1 style="text-align: center;"> Welcome to the SKY</h1>
+        <p style="text-align: center;"> In this app you will be able to make a prediction for GALAXY, STAR and QSO using RandomForestClassifier.
+            <br><br>Fill in the form below than click on predict to see your result.<br><br>
+            NOTE: all the field are rquired.</p>
+    </head>
+    
+    <body bgcolor="#b8bdc4">
+        
+        <form  method="POST",action =" {{url_for('main')}}", style="text-align: center;">
+            <br>
+            Right Ascension (ra)<br><br>
+            <input type="float" name="ra", placeholder="Enter ra" required/>
+            <br><br>
+             Declination (dec) <br><br>
+            <input type="float" name="dec", placeholder="Enter dec" required/>
+            <br><br>
+            U-band (u)<br><br>
+             <input type="float" name="u", placeholder="Enter u" required/>
+            <br><br>
+            G-band (g)<br><br>
+             <input type="float" name="g", placeholder="Enter g" required/>
+            <br><br>
+             R-band (r)<br><br>
+            <input type="float" name="r", placeholder="Enter r" required/>
+            <br><br>
+            I-band (i)<br><br>
+             <input type="float" name="i", placeholder="Enter i" required/>
+            <br><br>
+            Z-band (z)<br><br>
+             <input type="float" name="z", placeholder="Enter z" required/>
+            <br><br>
+            Final Redshift(redshift) <br><br>
+            <input type="float" name="redshift", placeholder="Enter redshift" required/>
+            <br><br>
+            plate number(plate) <br><br>
+            <input type="float" name="plate", placeholder="Enter plate" required/>
+            <br><br>
+            MJD of observation(mjd)<br><br>
+             <input type="float" name="mjd", placeholder="Enter mjd" required/>
+            <br><br>
+            
+            
+            <input type="submit" value="predict">
+            
+        
+
+        </form>
+
+        <p style="text-align: center;">{{ output }}</p>
+        
+        
+        
+        <form  method = 'GET' , action="/history" ,style="text-align: center;">
+            <h1> See prediction history</h1>
+            <input type="submit" value="History" />
+        </form>
+
+    
+
+    </body>
+</html>
